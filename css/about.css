@@ -1,0 +1,62 @@
+.container {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.row {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.display-4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.lead {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.social-links a {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  color: #007bff;
+}
+
+.social-links a:hover {
+  color: #0056b3;
+  transition: color 0.2s ease-in-out;
+}
+
+@media only screen and (max-width: 767px) {
+  .social-links {
+    margin-top: 1rem;
+  }
+}
+
+footer{
+  flex-shrink: 0;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.wrapper {
+  min-height: 100%;
+  margin-bottom: -50px;
+}
+
+.footer, .push {
+  height: 50px;
+}
+
+.footer {
+  background-color: #343a40;
+  color: #fff;
+}
