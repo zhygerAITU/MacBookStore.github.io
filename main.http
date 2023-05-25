@@ -58,10 +58,6 @@
 					<img src="images/Category/airpods.jpeg" alt="Airpods" class="category-image">
 					<span class="category-title">Airpods</span>
 				</a>
-				<a href="Accessories.html" class="category-link">
-					<img src="images/Category/Access.jpeg" alt="Accessories" class="category-image">
-					<span class="category-title">Accessories</span>
-				</a>
 			</div>
 		</div>
 	</div>
