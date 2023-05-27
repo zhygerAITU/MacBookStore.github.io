@@ -120,3 +120,39 @@ h1 {
 .category-title {
   font-size: 1.2rem;
 }
+
+.category-container {
+  display: inline-block;
+  border-radius: 10px;
+  background-color: #1e2021;
+  padding: 10px;
+  text-align: center;
+  margin: 10px;
+}
+
+
+@media (min-width: 992px) {
+  /* Large screens (desktop) - display all categories in one row */
+  .category-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .category-link {
+    flex-basis: 20%;
+  }
+}
+
+@media (max-width: 991px) {
+  /* Medium screens - display two categories per row */
+  .category-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .category-link {
+    flex-basis: 45%;
+  }
+}
+
+/* For small screens, the default behavior is already one category per row */
