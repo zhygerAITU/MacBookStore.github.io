@@ -38,9 +38,6 @@
   }
 }
 
-footer{
-  flex-shrink: 0;
-}
 
 html, body {
   height: 100%;
@@ -50,13 +47,4 @@ html, body {
 .wrapper {
   min-height: 100%;
   margin-bottom: -50px;
-}
-
-.footer, .push {
-  height: 50px;
-}
-
-.footer {
-  background-color: #343a40;
-  color: #fff;
 }

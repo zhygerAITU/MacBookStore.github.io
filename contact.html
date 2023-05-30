@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Apple Store - Contact Us</title>
+	<audio id="bg-music" src="music/contact.mp3" autoplay loop></audio>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/index.css">
 	<script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
@@ -114,6 +116,22 @@
 				</div>
 			</div>
 		</div>
+		<button id="toggle-music-btn">Mute</button>
+          
+		<script>
+		  const audio = document.getElementById('bg-music');
+		  const toggleBtn = document.getElementById('toggle-music-btn');
+	  
+		  toggleBtn.addEventListener('click', function() {
+			if (audio.muted) {
+			  audio.muted = false;
+			  toggleBtn.textContent = 'Mute';
+			} else {
+			  audio.muted = true;
+			  toggleBtn.textContent = 'Unmute';
+			}
+		  });
+		</script>
 	</footer>
 	
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
