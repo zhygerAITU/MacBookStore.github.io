@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Apple Store - Contact Us</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/index.css">
 	<script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
@@ -45,15 +45,18 @@
 						<form>
 							<div class="form-group">
 								<label for="name">Name</label>
-								<input type="text" class="form-control" id="name">
+								<input type="text" class="form-control" id="name" pattern="[A-Za-z]+" required>
+								<div class="error-message" id="name-error"></div>
+
 							</div>
 							<div class="form-group">
 								<label for="email">Email address</label>
-								<input type="email" class="form-control" id="email">
+								<input type="email" class="form-control" id="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}" required>
+								<div class="error-message" id="email-error"></div>
 							</div>
 							<div class="form-group">
 								<label for="message">Message</label>
-								<textarea class="form-control" id="message" rows="3"></textarea>
+								<textarea class="form-control" id="message" rows="3" required></textarea>
 							</div>
 							<button type="submit" class="btn btn-primary">Send Message</button>
 						</form>
