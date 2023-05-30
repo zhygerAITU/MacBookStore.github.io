@@ -58,7 +58,36 @@
 								<label for="message">Message</label>
 								<textarea class="form-control" id="message" rows="3" required></textarea>
 							</div>
-							<button type="submit" class="btn btn-primary">Send Message</button>
+							<button type="submit" class="btn btn-primary" id="send-button">Send Message</button>
+							
+							<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+							<script>
+							$(document).ready(function() {
+							var submitCount = 0;
+							var intervalStart = Date.now();
+
+							$('form').submit(function(event) {
+								event.preventDefault();
+
+								var now = Date.now();
+								var intervalSeconds = (now - intervalStart) / 1000;
+
+								if (submitCount >= 2 && intervalSeconds < 60) {
+									alert("Too many requests. Please try again later.");
+									return;
+								}
+
+								submitCount++;
+								if (intervalSeconds > 300) {
+									submitCount = 1;
+									intervalStart = now;
+								}
+								
+								alert("Thank you! We will contact you later.");
+							});
+							});
+
+							</script>
 						</form>
 					</div>
 				</div>
