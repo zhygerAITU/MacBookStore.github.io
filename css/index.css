@@ -155,4 +155,17 @@ h1 {
   }
 }
 
+.category-image {
+  border-radius: 50%; /* Makes the image round */
+  object-fit: cover; /* Ensures the image covers the entire container */
+  width: 100%; /* Sets the width of the image to 100% of its container */
+  height: 100%; /* Sets the height of the image to 100% of its container */
+}
+
+.category-title {
+  color: black;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
 /* For small screens, the default behavior is already one category per row */
