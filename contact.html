@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Iphone Store - Contact</title>
+	<title>Apple Store - Contact Us</title>
+	<audio id="bg-music" src="music/contact.mp3" autoplay loop></audio>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/index.css">
 	<script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+	<link rel="icon" type="image/x-icon" href="images/favicon.png">
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<div class="container">
-			<a class="navbar-brand" href="#">Iphone Store</a>
+			<a class="navbar-brand" href="#">Apple Store</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item">
-						<a class="nav-link" href="index.html">Home</a>
+						<a class="nav-link" href="main.html">Home</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="about.html">About</a>
@@ -44,17 +47,49 @@
 						<form>
 							<div class="form-group">
 								<label for="name">Name</label>
-								<input type="text" class="form-control" id="name">
+								<input type="text" class="form-control" id="name" pattern="[A-Za-z]+" required>
+								<div class="error-message" id="name-error"></div>
+
 							</div>
 							<div class="form-group">
 								<label for="email">Email address</label>
-								<input type="email" class="form-control" id="email">
+								<input type="email" class="form-control" id="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}" required>
+								<div class="error-message" id="email-error"></div>
 							</div>
 							<div class="form-group">
 								<label for="message">Message</label>
-								<textarea class="form-control" id="message" rows="3"></textarea>
+								<textarea class="form-control" id="message" rows="3" required></textarea>
 							</div>
-							<button type="submit" class="btn btn-primary">Send Message</button>
+							<button type="submit" class="btn btn-primary" id="send-button">Send Message</button>
+							
+							<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+							<script>
+							$(document).ready(function() {
+							var submitCount = 0;
+							var intervalStart = Date.now();
+
+							$('form').submit(function(event) {
+								event.preventDefault();
+
+								var now = Date.now();
+								var intervalSeconds = (now - intervalStart) / 1000;
+
+								if (submitCount >= 2 && intervalSeconds < 60) {
+									alert("Too many requests. Please try again later.");
+									return;
+								}
+
+								submitCount++;
+								if (intervalSeconds > 300) {
+									submitCount = 1;
+									intervalStart = now;
+								}
+								
+								alert("Thank you! We will contact you later.");
+							});
+							});
+
+							</script>
 						</form>
 					</div>
 				</div>
@@ -66,8 +101,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6">
-					<h4>Iphone Store</h4>
-					<p>Uly Dala 11/3, Astana, Kazakhstan</p>
+					<h4>Apple Store</h4>
+					<p>Astana Expo, Astana, Kazakhstan</p>
 					<p>Phone number: +7 (705) 220-5830</p>
 				</div>
 				<div class="col-md-6">
@@ -76,10 +111,27 @@
 						<li class="list-inline-item"><a href="https://instagram.com/dandeliodon?igshid=YmMyMTA2M2Y=" target="_blank"><i class="fab fa-instagram fa-2x"></i></a></li>
 						<li class="list-inline-item"><a href="https://www.facebook.com/groups/ElonMusk/?locale=ru_RU" target="_blank"><i class="fab fa-facebook fa-2x"></i></a></li>
 						<li class="list-inline-item"><a href="https://t.me/zhigerD" target="_blank"><i class="fab fa-telegram fa-2x"></i></a></li>
+						<li class="list-inline-item"><a href="https://github.com/zhygerAITU" target="_blank"><i class="fab fa-github fa-2x"></i></a></li>
 					</ul>
 				</div>
 			</div>
 		</div>
+		<button id="toggle-music-btn">Mute</button>
+          
+		<script>
+		  const audio = document.getElementById('bg-music');
+		  const toggleBtn = document.getElementById('toggle-music-btn');
+	  
+		  toggleBtn.addEventListener('click', function() {
+			if (audio.muted) {
+			  audio.muted = false;
+			  toggleBtn.textContent = 'Mute';
+			} else {
+			  audio.muted = true;
+			  toggleBtn.textContent = 'Unmute';
+			}
+		  });
+		</script>
 	</footer>
 	
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
